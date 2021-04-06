@@ -5,3 +5,8 @@ body {
 span.bold {
     font-weight: bold;
 }
+
+.credit {
+    text-align: right;
+    font-style: italic;
+}

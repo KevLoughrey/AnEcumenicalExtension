@@ -21,5 +21,8 @@ function parseData(obj) {
         finalHTMLString += `<p>${split_quote[i]}</p>`;
     }
 
+    let episode = obj.episode;
+    finalHTMLString += `<p class="credit">—${episode}</p>`;
+
     return finalHTMLString;
 }
