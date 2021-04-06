@@ -1,9 +1,13 @@
 var _URL = `https://api.fatherted.irish/quotes/random`;
-var _TARGET_ELEMENT = document.getElementById("quote");
+var _COUNTER_TARGET_ELEMENT = document.getElementById("counter");
+var _QUOTE_TARGET_ELEMENT = document.getElementById("quote");
 
 fetch(_URL)
     .then(response => response.json())
-    .then(data => _TARGET_ELEMENT.innerHTML = parseData(data));
+    .then(function (data) {
+        _QUOTE_TARGET_ELEMENT.innerHTML = parseData(data);
+        updateCounter();
+    });
 
 function parseData(obj) {
     let quote = obj.quote;
@@ -25,4 +29,16 @@ function parseData(obj) {
     finalHTMLString += `<p class="credit">—${episode}</p>`;
 
     return finalHTMLString;
+}
+
+function updateCounter() {
+    chrome.storage.sync.get('frtedcount', function (data) {
+        if (typeof data.frtedcount === 'undefined') {
+            chrome.storage.sync.set({ frtedcount: 1 });
+            _COUNTER_TARGET_ELEMENT.innerHTML = `You have generated 1 Father Ted quote.<br>God bless you.`;
+        } else {
+            chrome.storage.sync.set({ frtedcount: data.frtedcount + 1 });
+            _COUNTER_TARGET_ELEMENT.innerHTML = `You have generated ${data.frtedcount} Father Ted quotes.<br>God bless you.`;
+        }
+    });
 }

@@ -4,5 +4,8 @@
     "version": "0.1",
     "action": {
         "default_popup": "content.html"
-    }
+    },
+    "permissions": [
+        "storage"
+    ]
 }

@@ -14,3 +14,8 @@ span.bold {
     text-align: right;
     font-style: italic;
 }
+
+#counter {
+    text-align: center;
+    font-size: larger;
+}
