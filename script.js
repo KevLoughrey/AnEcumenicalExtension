@@ -1,1 +1,1 @@
-alert("Hello, World!")
+document.getElementById("dynamic").innerHTML = "Hello, World";
