@@ -6,5 +6,20 @@ fetch(_URL)
     .then(data => _TARGET_ELEMENT.innerHTML = parseData(data));
 
 function parseData(obj) {
-    return obj.quote;
+    let quote = obj.quote;
+    let characters = obj.characters;
+
+    // convert speaker names to bold 
+    for (let i = 0; i < characters.length; i++) {
+        quote = quote.replaceAll(`${characters[i]}:`, `<span class="bold">${characters[i]}:</span>`)
+    }
+
+    split_quote = quote.split('\n');
+    let finalHTMLString = "";
+    // make a new paragraph element for each dialogue line 
+    for (let i = 0; i < split_quote.length; i++) {
+        finalHTMLString += `<p>${split_quote[i]}</p>`;
+    }
+
+    return finalHTMLString;
 }
