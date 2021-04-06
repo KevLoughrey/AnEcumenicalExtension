@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
+
 body {
+    font-family: 'Marcellus SC', serif;
     width: 500px;
+    background: radial-gradient(circle, rgba(195,232,251,1) 0%, rgba(238,247,254,1) 59%, rgba(255,255,255,1) 100%);
 }
 
 span.bold {
