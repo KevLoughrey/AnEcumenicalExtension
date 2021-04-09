@@ -1,5 +1,5 @@
 # An Ecumenical Extension
-A browser extension that generates a random Father Ted quote whenever clicked. Uses the absolutely fantastic [Father Ted API](https://fatherted.irish/) as a backend.
+A browser extension that generates a random Father Ted quote whenever clicked. Uses the absolutely fantastic [Father Ted API](https://fatherted.irish/) as a backend, and the Marcellus SC font by [Astigmatic](https://fonts.google.com/specimen/Marcellus+SC).
 
 # Installation
 ## Chrome/Chromium
